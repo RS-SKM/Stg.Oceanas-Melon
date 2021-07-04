@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float speed = 200.0f;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -16,7 +16,6 @@ public class Rock : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
-    // Update is called once per frame
     void Update()
     {
         //if object move pass the visable x, destroy it

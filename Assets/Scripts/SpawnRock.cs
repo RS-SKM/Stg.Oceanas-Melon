@@ -23,7 +23,7 @@ public class SpawnRock : MonoBehaviour
     private void spawnRocks()
     {
         GameObject rock = Instantiate(rockPrefab) as GameObject;
-        rock.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y, screenBounds.y));
+        rock.transform.position = new Vector2(screenBounds.x * -1, Random.Range(-screenBounds.y, screenBounds.y));
     }
 
     IEnumerator rockWave()

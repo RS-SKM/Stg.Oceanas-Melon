@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
+    public bool godMode;
     private Rigidbody2D rb;
     private GameObject player;
 
@@ -18,11 +19,23 @@ public class PlayerMovement : MonoBehaviour
     {
         ProcessInput();
 
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            rb.simulated = true; //turn on collision for 2D object only
+        }
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Destroy(this.gameObject);
+        if (godMode == true)
+        {
+            rb.simulated = false; //turn off collision 
+        }
+        if (godMode == false)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void FixedUpdate()
