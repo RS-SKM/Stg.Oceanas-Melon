@@ -35,10 +35,10 @@ public class Echolocation : MonoBehaviour
             range = 0f;
             alreadyPingedColliderList.Clear(); //clear the list after echo reaches max range
         }
-        pulseTransform.localScale = new Vector3(range, range);
+        pulseTransform.localScale = new Vector2(range, range);
 
         //.CircleCastAll will return an array of raycastHit
-        RaycastHit2D[] raycastHit2DArray = Physics2D.CircleCastAll(transform.position, range / 2f, Vector2.zero); //fancy magic funtion to detect when they hit an object
+        RaycastHit2D[] raycastHit2DArray = Physics2D.CircleCastAll(transform.position, range, Vector2.zero); //fancy magic funtion to detect when they hit an object
         foreach (RaycastHit2D raycastHit2D in raycastHit2DArray) //execute for every raycastHit in the array
         {
             if(raycastHit2D.collider != null)
