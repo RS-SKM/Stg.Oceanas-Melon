@@ -232,10 +232,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0.1
+  - name: 01
+    clip: {fileID: 8300000, guid: 6cc73ae4154cd7b4c805902b17f48aef, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 02
+    clip: {fileID: 8300000, guid: 2e80fff5571ead6469bd9836a2b5c2ea, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 03
+    clip: {fileID: 8300000, guid: 8a21c74de4312854593758ad46ac058e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 04
+    clip: {fileID: 8300000, guid: 6f1210cca6d5de7409be17dbfb652d26, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 05
+    clip: {fileID: 8300000, guid: b6920d64276cfa44b87612fa20b9dd02, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 06
+    clip: {fileID: 8300000, guid: 37e59e2e4da7b47429cbad713e8465f6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 07
+    clip: {fileID: 8300000, guid: 024cfce2da66a5d4dae8c9ec071ef091, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 08
+    clip: {fileID: 8300000, guid: d750f56e245ba6f429b931a748922aa4, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 09
+    clip: {fileID: 8300000, guid: 7bb5a7b057b619645a4b8ae46f331658, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 10
+    clip: {fileID: 8300000, guid: 1831117ef3e7a5f4db57f590d558d618, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 11
+    clip: {fileID: 8300000, guid: 2415f9b45dd514b4ba9e405f395d0662, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: 12
+    clip: {fileID: 8300000, guid: 7bb5a7b057b619645a4b8ae46f331658, type: 3}
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
 --- !u!4 &927954957
 Transform:
@@ -743,16 +798,15 @@ MonoBehaviour:
   - Sir! Our radar navigation system is offline!:Crew Member
   - What! How the hell did that happen!?:The General
   - We were having a water gun fight in the navigation room...:Crew Member
-  - What the-!:The General
-  - Go to the control room and put her in stationary!
+  - What the-! Go to the control room and put her in stationary!:The General
   - "Ohh... We-we had a water gun fight in that room too\u2026:Crew Member"
-  - GOD DAMN IT! WHAT THE HELL ARE YOU ALL THINKING!?:The General
-  - Turn on all exterior lights, and get Sergeant Oceana in here!
-  - Ye-yes sir!:Crew Member
+  - WHAT IN TARNATION! WHAT THE HELL WERE YOU ALL THINKING!?:The General
+  - Turn on all exterior lights, and somebody get Sergeant Oceana in here!
+  - Ye-sir, yes sir!:Crew Member
   - "*excited dolphin noises*:Stg.Oceana\u2019s"
   - Okay Sergeant, we are moving into a naval minefield without a radar.So we need
     you to get out there and navigate, use your melon to echolocate,:The General
-  - NOW STEP UP AND SHOW ME YOUR WAR FACE!
+  - NOW STEP UP AND SHOW ME YOUR WAR FACE SOLDIER!
   - "*dutiful dolphin noises*:Stg.Oceana\u2019s"
 --- !u!114 &1562487891
 MonoBehaviour:
@@ -771,7 +825,7 @@ MonoBehaviour:
     speakerNameText: {fileID: 159865909}
     speechText: {fileID: 941785798}
   isWaitingForUserInput: 0
-  targetSpeech: what does this do?
+  targetSpeech: 
 --- !u!1 &2017883167
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +837,6 @@ GameObject:
   - component: {fileID: 2017883168}
   - component: {fileID: 2017883171}
   - component: {fileID: 2017883170}
-  - component: {fileID: 2017883169}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -811,24 +864,6 @@ RectTransform:
   m_AnchoredPosition: {x: -650, y: 115}
   m_SizeDelta: {x: -1500, y: -930}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2017883169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017883167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f678e79f47cc6894ba43bb93d138af31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
-  lines:
-  - hey
-  - 
-  textSpeed: 0.3
-  index: 0
 --- !u!114 &2017883170
 MonoBehaviour:
   m_ObjectHideFlags: 0
