@@ -10,7 +10,7 @@ public class Echolocation : MonoBehaviour
     private Transform pulseTransform;
     private float range;
     private float maxRange;
-    //private float rangeSpeed;
+    private float rangeSpeed;
     private float fadeRange;
     private SpriteRenderer pulseSpriteRender;
     private Color pulseColor;
@@ -21,14 +21,14 @@ public class Echolocation : MonoBehaviour
         pulseTransform = transform.Find("Pulse");
         pulseSpriteRender = pulseTransform.GetComponent<SpriteRenderer>();
         pulseColor = pulseSpriteRender.color;
-        maxRange = 1000f;
-        fadeRange = 300f;
+        maxRange = 200f;
+        fadeRange = 20f;
+        rangeSpeed = maxRange;
         alreadyPingedColliderList = new List<Collider2D>();
     }
 
     private void Update()
     {
-        float rangeSpeed = 500f;
         range += rangeSpeed * Time.deltaTime;
         if (range > maxRange)
         {

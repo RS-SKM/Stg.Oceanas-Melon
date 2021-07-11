@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnRock : MonoBehaviour
+public class SpawnMine : MonoBehaviour
 {
-    public GameObject rockPrefab;
+    public GameObject minePrefab;
     public float respawnTime = 1.0f;
     private Vector2 screenBounds;
     private bool gameStart = true;
@@ -12,7 +12,7 @@ public class SpawnRock : MonoBehaviour
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        StartCoroutine(rockWave());
+        StartCoroutine(mineWave());
     }
 
     void Update()
@@ -20,18 +20,18 @@ public class SpawnRock : MonoBehaviour
 
     }
 
-    private void spawnRocks()
+    private void spawnMine()
     {
-        GameObject rock = Instantiate(rockPrefab) as GameObject;
-        rock.transform.position = new Vector2(screenBounds.x * -1, Random.Range(-screenBounds.y, screenBounds.y));
+        GameObject mine = Instantiate(minePrefab) as GameObject;
+        mine.transform.position = new Vector2(screenBounds.x * 1.1f, Random.Range(screenBounds.y, -screenBounds.y));
     }
 
-    IEnumerator rockWave()
+    IEnumerator mineWave()
     {
         while(gameStart == true)
         {
             yield return new WaitForSeconds(respawnTime);
-            spawnRocks();
+            spawnMine();
         }
 
     }
