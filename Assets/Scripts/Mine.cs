@@ -31,6 +31,7 @@ public class Mine : MonoBehaviour
     {
         Debug.Log("Mine Exploded");
         Instantiate(explosion, transform.position, Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("explosion");
         Destroy(other.gameObject);
         Invoke("ChangeScene", 2); //call this function in x seconds
     }
@@ -38,6 +39,6 @@ public class Mine : MonoBehaviour
     void ChangeScene()
     {
         Debug.Log("Gameover");
-        //SceneManager.sceneLoaded(3);
+        SceneManager.LoadScene(3);
     }
 }

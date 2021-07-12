@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Testing : MonoBehaviour
 {
 	DialogueSystem dialogue;
+	public GameObject spawnCrewSprite;
+	public GameObject crewLocation;
+	public GameObject spawnGeneralSprite;
+	public GameObject generalLocation;
+	public GameObject spawnOceanaSprite;
+	public GameObject oceanaLocation;
 	
     // Start is called before the first frame update
     void Start()
@@ -38,7 +45,7 @@ public string[] s = new string[]
 		
 		"NOW STEP UP AND SHOW ME YOUR WAR FACE!",
 		
-		"*dutiful dolphin noises*:Stg.Oceana’s"
+		"*dutiful dolphin noises*:Stg.Oceana’s",
 		
 		
 	};
@@ -82,11 +89,13 @@ public string[] s = new string[]
 		if(lineIndex == 0)
 		{
 			FindObjectOfType<AudioManager>().Play("01");
+			Instantiate(spawnCrewSprite, crewLocation.transform);
 		}
 		if(lineIndex == 1)
 		{
 			FindObjectOfType<AudioManager>().Stop("01");
 			FindObjectOfType<AudioManager>().Play("02");
+			Instantiate(spawnGeneralSprite, generalLocation.transform);
 		}
 		if(lineIndex == 2)
 		{
@@ -122,6 +131,8 @@ public string[] s = new string[]
 		{
 			FindObjectOfType<AudioManager>().Stop("08");
 			FindObjectOfType<AudioManager>().Play("09");
+			Destroy(crewLocation);
+			Instantiate(spawnOceanaSprite, oceanaLocation.transform);
 		}
 		if(lineIndex == 9)
 		{
@@ -139,7 +150,11 @@ public string[] s = new string[]
 			FindObjectOfType<AudioManager>().Play("12");
 		}
 		
-		
+		if(lineIndex == 12)
+		{
+			FindObjectOfType<AudioManager>().Stop("12");
+			SceneManager.LoadScene(2);
+		}
 	}
 
 }

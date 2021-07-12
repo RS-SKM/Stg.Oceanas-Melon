@@ -9,6 +9,7 @@ public class VoiceControl : MonoBehaviour
 {
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
+    public Echolocation echolocate;
 
     void Start()
     {
@@ -16,8 +17,11 @@ public class VoiceControl : MonoBehaviour
         actions.Add("up", Up);
         actions.Add("down", Down);
         actions.Add("left", Left);
-        //actions.Add("echo", Echo);
-        //actions.Add("shoot", Shoot);
+        actions.Add("echo", Echolocate);
+        actions.Add("echolocate", Echolocate);
+        actions.Add("echolocation", Echolocate);
+        actions.Add("pulse", Echolocate);
+        actions.Add("ping", Echolocate);
 
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
@@ -32,21 +36,26 @@ public class VoiceControl : MonoBehaviour
 
     private void Right()
     {
-        transform.Translate(200, 0, 0);
+        transform.Translate(30, 0, 0);
     }
 
     private void Up()
     {
-        transform.Translate(0, 200, 0);
+        transform.Translate(0, 30, 0);
     }
 
     private void Down()
     {
-        transform.Translate(0, -200, 0);
+        transform.Translate(0, -30, 0);
     }
 
     private void Left()
     {
-        transform.Translate(-200, 0, 0);
+        transform.Translate(-30, 0, 0);
+    }
+
+    private void Echolocate()
+    {
+        echolocate.Echo();
     }
 }
