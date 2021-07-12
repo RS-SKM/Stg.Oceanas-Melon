@@ -507,13 +507,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '"WASD" to move to submarine
+  m_Text: '"WASD" or Say "Left, Right, Up, Down" to move the submarine
 
-    Say "Pulse, Ping, Echo, Echolocate, or
-    Echolocation" to activate Sgt.Ocean Echolocation ability
+    Say "Ping,
+    Echo, Echolocate" to activate Sgt.Ocean Echolocation ability
 
-    Press "Space" to
-    continue
+    Press "Space"
+    to continue
 
 '
 --- !u!222 &941785799

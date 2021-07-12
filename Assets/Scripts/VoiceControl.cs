@@ -19,8 +19,6 @@ public class VoiceControl : MonoBehaviour
         actions.Add("left", Left);
         actions.Add("echo", Echolocate);
         actions.Add("echolocate", Echolocate);
-        actions.Add("echolocation", Echolocate);
-        actions.Add("pulse", Echolocate);
         actions.Add("ping", Echolocate);
 
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
